@@ -10,7 +10,7 @@ const app = require("./app");
 
 mongoose.Promise = global.Promise;
 mongoose
-  .connect(process.env.MONGODB_URI, {
+  .connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.oexw8.mongodb.net/portafoliodb?retryWrites=true&w=majority` || process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

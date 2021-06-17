@@ -14,6 +14,7 @@ var controller = {
     });
   },
 
+  // Guarda un proyecto
   saveProject: function (req, res) {
     var project = new Project();
 
