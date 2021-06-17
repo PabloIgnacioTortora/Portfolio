@@ -111,7 +111,6 @@ var controller = {
   // Subir imagenes al documento
   uploadImage: function (req, res) {
     var projectId = req.params.id;
-    var fileName = "Imagen no subida";
 
     if (req.files) {
       var filePath = req.files.image.path;
