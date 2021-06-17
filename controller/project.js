@@ -111,13 +111,17 @@ var controller = {
   // Subir imagenes al documento
   uploadImage: function (req, res) {
     var projectId = req.params.id;
-console.log(req.files.image.path);
     if (req.files) {
       var filePath = req.files.image.path;
+      console.log(filePath)
       var fileSplit = filePath.split("\\");
+      console.log(fileSplit);
       var fileName = fileSplit[1];
+      console.log(fileName);
       var extSplit = fileName.split("\." || ".");
+      console.log(extFile);
       var fileExt = extSplit[1];
+      console.log(fileExt);
       if (
         fileExt == "png" ||
         fileExt == "jpg" ||
