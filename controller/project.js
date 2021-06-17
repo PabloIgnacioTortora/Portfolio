@@ -116,7 +116,7 @@ console.log(req.files.image.path);
       var filePath = req.files.image.path;
       var fileSplit = filePath.split("\\");
       var fileName = fileSplit[1];
-      var extSplit = fileName.split("\.");
+      var extSplit = fileName.split("\." || ".");
       var fileExt = extSplit[1];
       if (
         fileExt == "png" ||
