@@ -119,7 +119,7 @@ var controller = {
       var fileName = fileSplit[1];
       console.log(fileName);
       var extSplit = fileName.split(".");
-      console.log(extFile);
+      console.log(extSplit);
       var fileExt = extSplit[1];
       console.log(fileExt);
       if (
