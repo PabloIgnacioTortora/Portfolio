@@ -56,7 +56,7 @@ const path = require('path');
   },
 
   // Listar los documentos en la base de datos
-  const getProjects = function (req, res) {
+  var getProjects = function (req, res) {
     Project.find({}).exec((err, projects) => {
       if (err)
         return res
