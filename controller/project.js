@@ -114,11 +114,11 @@ var controller = {
     if (req.files) {
       var filePath = req.files.image.path;
       console.log(filePath)
-      var fileSplit = filePath.split("\\");
+      var fileSplit = filePath.split("/");
       console.log(fileSplit);
       var fileName = fileSplit[1];
       console.log(fileName);
-      var extSplit = fileName.split("\." || ".");
+      var extSplit = fileName.split(".");
       console.log(extFile);
       var fileExt = extSplit[1];
       console.log(fileExt);
