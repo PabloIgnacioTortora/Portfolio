@@ -1,0 +1,46 @@
+<div id="title">
+  <strong><h1 class="h1" id="h1">Web Developer</h1></strong>
+  <h2 class="h2">{{ "subtitulo" | translate: { subtitle: subtitle } }}</h2>
+</div>
+
+<div class="img-about">
+  <img src="../../../assets/img/hero.svg" class="img-fluid" alt="" />
+</div>
+
+<div class="about">
+  <div class="card card-about">
+    <div class="card-body card-body-about text-center">
+      <h3>{{ "aboutTitle" | translate }}</h3>
+      <p>
+        {{ "aboutParraf" | translate }}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="technologies">
+  <h2 class="text-center mb-5">{{ "skills" | translate }}</h2>
+  <div class="skills justify-content-md-center">
+    <div
+      class="skill card"
+      style="max-width: auto"
+      *ngFor="let skill of skillsIcons; let i = index"
+    >
+      <div class="row h-100">
+        <div class="col-md-4 align-middle rounded align-self-center p-4">
+          <img src="{{ skill }}" class="img-fluid" alt="..." />
+        </div>
+        <div class="col-md-8 d-flex align-items-center">
+          <div class="card-body">
+            <h5 class="card-title text-light skillTitle">
+              {{ skillsDescriptions[i] }}
+            </h5>
+            <p class="card-text text-light">
+              {{ skillsDescriptions[i] | translate }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

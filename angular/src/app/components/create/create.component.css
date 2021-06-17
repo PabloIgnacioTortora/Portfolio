@@ -1,0 +1,104 @@
+@media (min-width: 300px) {
+  .card-contacto {
+    padding: 23px;
+    background: #181818;
+    border: 1px solid #343434;
+    display: inline-block;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .create-container {
+    width: 100%;
+    margin-top: 30%;
+    margin-bottom: 20%;
+    text-align: center;
+  }
+
+  .create-container h1 {
+    text-align: center;
+    display: block;
+    font-size: 26px;
+    font-family: monospace;
+    color: #ffd369;
+  }
+
+  form {
+    margin: 0px auto;
+    color: #fff;
+  }
+
+  form label {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: start;
+  }
+
+  form input[type="text"],
+  form input[type="number"],
+  form textarea {
+    width: 100%;
+    padding: 5px;
+    background: #ffd369;
+  }
+
+  .upload {
+    margin-top: 40px;
+    text-align-last: justify;
+  }
+
+  .btn-upload:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .btn-upload {
+    color: #ffd369;
+  }
+
+  .form_error {
+    padding: 5px;
+    color: red;
+  }
+
+  .message {
+    padding: 5px;
+    border: 1px solid #000;
+  }
+
+  .messages {
+    display: flex;
+    height: fit-content;
+    justify-content: center;
+  }
+
+  .success {
+    background: green;
+    color: #fff;
+    margin: 0px auto;
+  }
+
+  .success a {
+    color: #fff;
+  }
+
+  .failed {
+    background-color: red;
+    border: none;
+  }
+
+  .archivo-load {
+    text-align: start;
+    margin-top: 6%;
+    margin-bottom: 6%;
+  }
+}
+
+@media (min-width: 768px) {
+  .create-container {
+    margin-top: 10%;
+    margin-bottom: 5%;
+  }
+}

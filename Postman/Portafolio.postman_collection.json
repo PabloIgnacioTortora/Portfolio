@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "aedb2863-24fc-4a97-80db-6ffc00b663e6",
+		"name": "Portafolio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Project/id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/project/6055c8479a5256254c0fbb46",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"project",
+						"6055c8479a5256254c0fbb46"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Projects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/projects",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveProject",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/saveProject",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"saveProject"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "projectUpdate",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/projectUpdate/:6055c5ea9a5256254c0fbb45",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"projectUpdate",
+						":6055c5ea9a5256254c0fbb45"
+					],
+					"variable": [
+						{
+							"key": "6055c5ea9a5256254c0fbb45",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "projectDelete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/projectDelete/6055c5ea9a5256254c0fbb45",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"projectDelete",
+						"6055c5ea9a5256254c0fbb45"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getImage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/getImage/c1mJR_WcVbS3an2tNG6wVJo6.png",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"getImage",
+						"c1mJR_WcVbS3an2tNG6wVJo6.png"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

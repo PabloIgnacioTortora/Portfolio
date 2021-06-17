@@ -1,0 +1,63 @@
+#container-form {
+  margin-top: 100px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.form-group{
+  margin-top: 20px;
+}
+
+.form-control {
+  background: #d1d1d1;
+}
+
+#h1-contacto {
+  text-align: center;
+  color: #ffd369;
+  margin-bottom: 30px;
+}
+
+#container-form span {
+  position: absolute;
+  color: red;
+}
+
+#container-form p {
+  text-align: center;
+}
+
+.card-contacto {
+  display: inline-block;
+  padding: 23px;
+  background: #181818;
+  border: 1px solid #343434;
+  width: 100%;
+}
+
+div {
+  color: #fffc;
+}
+
+div h2 {
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .card-contacto {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-contacto {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .card-contacto {
+    width: 40%;
+  }
+}

@@ -1,0 +1,99 @@
+/* perfect_background.css */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+html, body {
+  /* background: url(images/bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
+  background-color: #181818;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    overflow-y: scroll;
+    background: grey;
+    box-shadow: inset 0 0 4px #707070;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #181818;
+    border-radius: 10px;
+}
+
+.mat-drawer-content{
+    background-color: #181818;
+}
+
+.mat-drawer-inner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.mat-drawer {
+  text-align: center;
+}
+
+.mat-sidenav {
+  height: 100vh;
+  background-color: #181818;
+}
+
+.card {
+  border-radius: 9px !important;
+}
+
+.mat-select {
+  width: 30px;
+}
+
+.mat-option {
+  background-color: #181818 !important;
+  color: #fff;
+}
+
+.mat-option:hover:not(.mat-option-disabled),
+.mat-option:focus:not(.mat-option-disabled) {
+  background-color: #181818;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: #ffd369;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #ffd369;
+}
+
+.mat-select-arrow {
+  color: #ffd369;
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: #ffd369;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #fff;
+}
+
+.mat-option.mat-active {
+  color: #fff;
+}
+
+.mat-select-value-text {
+  color: #fff;
+}
+
+.mat-select-panel {
+  border-radius: 0px !important;
+  min-width: fit-content!important;
+}

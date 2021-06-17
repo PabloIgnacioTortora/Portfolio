@@ -1,0 +1,35 @@
+<div class="signincontainer">
+  <div class="card signCard p-3">
+    <h3 class="card-title text-center">Sign in</h3>
+    <div class="card-body">
+      <form (ngSubmit)="submit()" class="formGroup">
+        <div>
+          <label class="form-label">Email address</label>
+          <input
+            type="text"
+            class="form-control mb-3"
+            placeholder="Username"
+            name="username"
+            [(ngModel)]="username"
+            required
+          />
+        </div>
+
+        <div class="formGroup">
+          <input
+            type="password"
+            class="form-control mb-3"
+            placeholder="Password"
+            name="password"
+            [(ngModel)]="password"
+            required
+          />
+        </div>
+
+        <!-- Calling SignIn Api from AuthService -->
+        <div class="formGroup text-center">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+      </form>
+  </div>
+</div>

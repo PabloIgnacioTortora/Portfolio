@@ -1,0 +1,85 @@
+<div class="create-container">
+  <div class="card card-contacto">
+  <h1>{{ title }}</h1>
+
+  <div class='messages'>
+  <div class="message success" *ngIf="status == 'success'">
+    Se ha creado el proyecto correctamente, puedes verlo <a [routerLink]="['/proyecto', save_project._id]">aqui</a>
+  </div>
+  <div class="message failed" *ngIf="status == 'failed'">
+    El proyecto no se ha podido crear
+  </div>
+</div>
+
+  <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+    <div>
+      <label for="name">Nombre del proyecto</label>
+      <input
+        type="text"
+        name="name"
+        #name="ngModel"
+        [(ngModel)]="project.name"
+        required
+      />
+      <span class="form_error" *ngIf="name.touched && !name.valid"> * </span>
+    </div>
+    <div>
+      <label for="description">Descripcion</label>
+      <textarea
+        name="description"
+        #description="ngModel"
+        [(ngModel)]="project.description"
+        required
+      ></textarea>
+      <span
+        class="form_error"
+        *ngIf="description.touched && !description.valid"
+      >
+        *
+      </span>
+    </div>
+    <div>
+      <label for="LinkGit">Enlace repositorio</label>
+      <input
+        type="text"
+        name="category"
+        #category="ngModel"
+        [(ngModel)]="project.linkGit"
+        required
+      />
+      <span class="form_error" *ngIf="category.touched && !category.valid">
+        *
+      </span>
+    </div>
+    <div>
+      <label for="year">Año</label>
+      <input
+        type="number"
+        name="year"
+        #year="ngModel"
+        [(ngModel)]="project.year"
+      />
+    </div>
+    <div>
+      <label for="lenguajes">Lenguajes y Frameworks</label>
+      <input
+        type="text"
+        name="lenguajes"
+        #lenguajes="ngModel"
+        [(ngModel)]="project.lenguajes"
+        required
+      />
+      <span class="form_error" *ngIf="lenguajes.touched && !lenguajes.valid">
+        *
+      </span>
+    </div>
+    <div class="archivo-load">
+      <label for="image">Imagen del proyecto</label>
+      <input type="file" name="image" (change)="fileChangeEvent($event)"/>
+    </div>
+    <div class="upload">
+      <button class="btn btn-primary btn-upload" type="submit" value="Upload" [disabled]="!projectForm.form.valid" >Upload</button>
+    </div>
+  </form>
+  </div>
+</div>

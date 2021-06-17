@@ -1,0 +1,53 @@
+#detail-container {
+  width: 100%;
+  height: 100vh;
+  padding-top: 95px;
+}
+
+.goback-button {
+  width: 25px;
+  margin-bottom: 35px;
+  cursor: pointer;
+}
+
+#spinner {
+  position: absolute;
+  top: 50%;
+  left: 48%;
+}
+
+.card-project {
+  width: 100%;
+  background: #181818;
+  border: 1px solid #343434;
+}
+
+.card-project img {
+  border-radius: 9px;
+}
+
+.card-project h3 {
+  font-size: 21px;
+  text-align: left;
+  color: #fff;
+}
+
+.card-project,
+p,
+span {
+  color: #fff;
+}
+
+.card-project h2 {
+  color: #ffd369;
+}
+
+.del-btn {
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  #detail-container {
+    padding-top: 75px;
+  }
+}

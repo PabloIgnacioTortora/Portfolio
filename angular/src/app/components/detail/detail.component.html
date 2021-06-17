@@ -1,0 +1,41 @@
+<div id="detail-container">
+  <div
+    class="spinner-border text-primary"
+    id="spinner"
+    role="status"
+    *ngIf="loading"
+  ></div>
+  <img
+    src="../../../assets/icons/goback.svg"
+    class="goback-button"
+    (click)="goBack()"
+  />
+  <div class="card card-project" *ngIf="project">
+    <img
+      class="card-img-top"
+      src="{{ url + 'getImage/' + project.image }}"
+      *ngIf="project.image"
+    />
+    <div class="card-body">
+      <h2 class="card-title">{{ project.name }}</h2>
+      <br />
+      <h3 class="card-subtitle">{{ project.description }}</h3>
+      <br />
+      <p class="card-text">
+        <a href="{{ project.linkGit }}" target="blank">{{
+          "linkGit" | translate
+        }}</a>
+      </p>
+      <p class="card-text">
+        <a href="{{ project.linkDeploy }}" target="blank">{{
+          "linkDeploy" | translate
+        }}</a>
+      </p>
+      <p class="card-text">Lenguajes usados: {{ project.lenguajes }}</p>
+      <span class="card-text">Año: {{ project.year }}</span>
+      <div class="del-btn">
+        <button *ngIf="auth.loggedIn" type="button" class="btn btn-danger" (click)="deleteProject(project._id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

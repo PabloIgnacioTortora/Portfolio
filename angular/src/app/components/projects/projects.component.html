@@ -1,0 +1,16 @@
+<div id="container-project">
+  <div
+    class="spinner-border text-primary"
+    id="spinner"
+    role="status"
+    *ngIf="loading"
+  ></div>
+  <div *ngFor="let project of projects" class="card project">
+    <img
+      class="card-img-top"
+      src="{{ url + 'getImage/' + project.image }}"
+      [routerLink]="['/proyecto', project._id]"
+      *ngIf="project.image"
+    />
+  </div>
+</div>

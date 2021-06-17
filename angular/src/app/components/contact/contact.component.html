@@ -1,0 +1,75 @@
+<div id="container-form">
+  <div class="card card-contacto">
+    <h1 id="h1-contacto">{{ "contact" | translate }}</h1>
+    <div>
+      <form [formGroup]="myForm" (submit)="sendEmail($event)">
+        <div class="form-group">
+          <label>{{ "name" | translate }}</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="name"
+            name="name"
+            required
+          />
+          <span
+            *ngIf="
+              (myForm.controls['name'].errors &&
+                myForm.controls['name'].dirty) ||
+              (myForm.controls['name'].touched &&
+                myForm.controls['name'].invalid)
+            "
+            >*</span
+          >
+        </div>
+        <div class="form-group pb-3">
+          <label>Email</label>
+          <input
+            type="email"
+            class="form-control"
+            formControlName="email"
+            name="email"
+            required
+          />
+          <span
+            *ngIf="
+                (myForm.controls['email'].errors &&
+                myForm.controls['email'].dirty) ||
+              (myForm.controls['email'].touched &&
+                myForm.controls['email'].invalid)
+            "
+            >*</span
+          >
+          <span *ngIf="!emailVerify">Por favor, ingresa un Email valido</span>
+        </div>
+        <div class="form-group pb-3">
+          <label>{{ "message" | translate }}</label>
+          <textarea
+            class="form-control"
+            cols="30"
+            rows="6"
+            name="message"
+            formControlName="message"
+            required
+          ></textarea>
+          <span
+            *ngIf="
+                (myForm.controls['message'].errors &&
+                myForm.controls['message'].dirty) ||
+              (myForm.controls['message'].touched &&
+                myForm.controls['message'].invalid)
+            "
+            >*</span
+          >
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!myForm.valid || !emailVerify"
+        >
+          {{ "send" | translate }}
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

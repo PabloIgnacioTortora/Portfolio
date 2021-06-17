@@ -1,0 +1,216 @@
+@font-face {
+  font-family: "nameFont";
+  src: url("../../../assets/css/fonts/BungeeInline-Regular.ttf");
+}
+
+h2 {
+  color: #ffd369;
+}
+
+#title {
+  width: 100%;
+  height: 51vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32%;
+  margin-bottom: 16%;
+  text-align: center;
+}
+
+.h1 {
+  font-family: "Roboto";
+  color: #ffd369;
+  font-size: 470%;
+}
+
+.h2 {
+  width: 92%;
+  font-family: "Courier New", Courier, monospace;
+  color: #fff;
+  font-size: 150%;
+}
+
+.about-container {
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+
+.img-about {
+  width: 100%;
+}
+
+.about {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.card-about {
+  width: 100%;
+  height: min-content;
+  background: #181818;
+  margin-top: 13px;
+  align-self: center;
+  box-shadow: rgb(0 0 0 / 22%) 0px 12px 8px 1px;
+}
+
+.card-body-about {
+  justify-self: center;
+}
+
+.card-body-about h3 {
+  color: #fff;
+}
+
+.card-body-about p {
+  color: #fff;
+}
+
+.technologies {
+  margin-top: 100px;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 30px;
+  column-gap: 30px;
+  margin-top: 50px;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+  background: #1c1c1c;
+}
+
+.skill {
+  height: 100%;
+  background: #181818;
+  box-shadow: rgb(0 0 0 / 22%) 0px 12px 8px 1px;
+}
+
+.skillTitle {
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  #title {
+    width: 100%;
+    margin-top: 80px;
+  }
+
+  .h1 {
+    width: 100%;
+    font-size: 666%;
+    text-align: center;
+    margin: 0;
+  }
+
+  .h2 {
+    font-size: 160%;
+  }
+
+  .about {
+    width: 100%;
+  }
+
+  .card-about {
+    box-shadow: none;
+  }
+
+  .skills {
+    grid-template-columns: 100%;
+  }
+
+  .skill {
+    box-shadow: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .h1 {
+    width: 100%;
+    font-size: 704%;
+    text-align: center;
+    margin: 0;
+  }
+
+  .h2 {
+    font-size: 200%;
+  }
+
+  .skills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1366px) {
+  .h1 {
+    font-size: 700%;
+  }
+
+  .h2 {
+    font-size: 200%;
+  }
+
+  .about-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    margin-top: 0;
+    margin-bottom: 140px;
+    align-items: center;
+    text-align: justify;
+  }
+
+  .about {
+    width: 85%;
+    margin-bottom: 0;
+  }
+
+  .card-about {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .skills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #title {
+    height: 90vh;
+    align-items: flex-end;
+    justify-content: end;
+  }
+
+  .h1 {
+    margin-right: 62px;
+  }
+
+  .h2 {
+    font-size: 176%;
+    width: 60%;
+  }
+
+  .img-about {
+    width: fit-content;
+    position: absolute;
+    bottom: 5%;
+    left: 4%;
+  }
+
+  .img-about img {
+    width: 976px;
+  }
+
+  .about {
+    width: 100%;
+    margin-bottom: 10vh;
+  }
+
+  .card-about {
+    margin-bottom: 0;
+  }
+}

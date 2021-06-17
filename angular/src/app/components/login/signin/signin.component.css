@@ -1,0 +1,11 @@
+.signincontainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 160px;
+    margin-bottom: 140px;
+}
+
+.signCard{
+    width: fit-content;
+    margin: 0;
+}

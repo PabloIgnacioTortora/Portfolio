@@ -1,0 +1,156 @@
+<!-- MAT SIDENAV CONTAINER -->
+<mat-sidenav-container class="sidenav">
+  <!-- HEADER DESkTOP -->
+  <header id="header-desktop">
+    <mat-icon class="dev-icon" [routerLink]="['/sobre-mi']">
+      <img src="../assets/icons/dev-icon.svg" alt="DEV" />
+    </mat-icon>
+    <span class="spacer"></span>
+    <div class="tabs">
+      <a
+        [routerLinkActive]="['actived']"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [routerLink]="['/sobre-mi']"
+        class="link-menu"
+        >{{ "About" | translate }}</a
+      >
+      <a
+        [routerLinkActive]="['actived']"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [routerLink]="['/proyectos']"
+        class="link-menu"
+        >{{ "Projects" | translate }}</a
+      >
+      <a
+        [routerLinkActive]="['actived']"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [routerLink]="['/contacto']"
+        class="link-menu"
+        >{{ "Contact" | translate }}</a
+      >
+      <a
+        [routerLinkActive]="['actived']"
+        [routerLink]="['/crear-proyecto']"
+        class="link-menu"
+        *ngIf="auth.loggedIn"
+        >New project</a
+      >
+    </div>
+    <span class="spacer"></span>
+    <div class="logoutBtn" *ngIf="auth.loggedIn">
+      <button type="button" class="btn btn-warning" (click)="logout()">
+        Logout
+      </button>
+    </div>
+    <mat-form-field class="ES-EN">
+      <mat-label>ES/EN</mat-label>
+      <mat-select>
+        <mat-option (click)="switchLang('en')" [value]="'English'">
+          <span>English</span>
+        </mat-option>
+        <mat-option (click)="switchLang('es')" [value]="'Español'">
+          <span>Español</span>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </header>
+  <!-- END HEADER DESKTOP -->
+
+  <!-- Header MObile -->
+  <header id="header-mobile">
+    <div>
+      <mat-icon class="dev-icon" [routerLink]="['/sobre-mi']">
+        <img src="../assets/icons/dev-icon.svg" alt="DEV" />
+      </mat-icon>
+    </div>
+    <div class="menu-btn">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  </header>
+  <!-- END HEADER MOBILE -->
+  <!-- MAT SIDENAV -->
+  <mat-sidenav #sidenav [mode]="'over'">
+    <div>
+      <button class="link-button" [routerLink]="['/sobre-mi']">
+        {{ "About" | translate }}
+      </button>
+      <button class="link-button" [routerLink]="['/proyectos']">
+        {{ "projects" | translate }}
+      </button>
+      <button class="link-button" [routerLink]="['/contacto']">
+        {{ "Contact" | translate }}
+      </button>
+      <button
+        *ngIf="auth.loggedIn"
+        mat-menu-item
+        class="link-button"
+        [routerLink]="['/crear-proyecto']"
+      >
+        Crear proyecto
+      </button>
+    </div>
+    <mat-form-field class="ES-EN">
+      <mat-label>ES/EN</mat-label>
+      <mat-select>
+        <mat-option (click)="switchLang('en')" [value]="'English'">
+          <span>English</span>
+        </mat-option>
+        <mat-option (click)="switchLang('es')" [value]="'Español'">
+          <span>Español</span>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="logoutBtn" *ngIf="auth.loggedIn">
+      <button type="button" class="btn btn-warning" (click)="logout()">
+        Logout
+      </button>
+    </div>
+  </mat-sidenav>
+  <!-- MAT SIDENAV -->
+
+  <!-- RENDER COMPONENTS -->
+  <main class="box-component">
+    <router-outlet></router-outlet>
+  </main>
+  <!-- RENDER COMPONENTS -->
+
+  <!-- WHATSAPP BUTTON -->
+  <a class="whatsapp-button" id="whatsapp-button" href="https://wa.link/99iwsm" target="blank">
+    <img src="../assets/icons/whatsapp.ico">
+  </a>  
+  <!-- WHATSAPP BUTTON -->
+
+  <footer>
+    <div class="text-footer">
+      <p>Living, learning, & leveling up one day at a time.</p>
+    </div>
+    <div class="icons-footer">
+      <li>
+        <a href="mailto:pabloignaciotortora@gmail.com" target="blank"
+          ><img class="img-fluid icon-footer" src="../assets/icons/email.svg"
+        /></a>
+      </li>
+      <li>
+        <a href="https://github.com/PabloIgnacioTortora" target="blank"
+          ><img class="img-fluid icon-footer" src="../assets/icons/github.svg"
+        /></a>
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/in/pablo-ignacio-tortora-294b29120/"
+          target="blank"
+          ><img
+            class="img-fluid icon-footer"
+            src="../assets/icons/linkedin.svg"
+            alt="LinkedIn"
+        /></a>
+      </li>
+    </div>
+
+    <div class="copyrigth">
+      <p>Copyright&copy; {{ year }} - Pablo Ignacio Tortora</p>
+    </div>
+  </footer>
+</mat-sidenav-container>
