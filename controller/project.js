@@ -3,21 +3,22 @@ const Project = require("../models/project");
 const fs = require("fs");
 const path = require('path');
 
-  const home = function (req, res) {
+var controller = {
+  home: function (req, res) {
     return res.status(200).send({
     });
-  }
- const test = function (req, res) {
+  },
+  test: function (req, res) {
     return res.status(200).send({
       message: "Test del controador de projects",
     });
-  }
+  },
 
   // Guarda un proyecto
-  const saveProject = function (req, res) {
-    let project = new Project();
+  saveProject: function (req, res) {
+    var project = new Project();
 
-    let params = req.body;
+    var params = req.body;
     project.name = params.name;
     project.description = params.description;
     project.linkGit = params.linkGit;
@@ -37,10 +38,10 @@ const path = require('path');
           .send({ message: "No se ah podido guardar el proyecto" });
       return res.status(200).send({ project: projectStored });
     });
-  }
+  },
 
   //Mostrar un documento segun su Id
-  const getProject = function (req, res) {
+  getProject: function (req, res) {
     var projectId = req.params.id;
     if (projectId == null)
       return res.status(404).send({ message: "El proyecto no existe" });
@@ -56,7 +57,7 @@ const path = require('path');
   },
 
   // Listar los documentos en la base de datos
-  var getProjects = function (req, res) {
+  getProjects: function (req, res) {
     Project.find({}).exec((err, projects) => {
       if (err)
         return res
@@ -71,7 +72,7 @@ const path = require('path');
   },
 
   // Actulizar un documento en la base de datos
-  const updateProject = function (req, res) {
+  updateProject: function (req, res) {
     var projectId = req.params.id;
     var update = req.body;
 
@@ -90,7 +91,7 @@ const path = require('path');
     );
   },
 
-  const deleteProject = function (req, res) {
+  deleteProject: function (req, res) {
     var projectId = req.params.id;
     Project.findByIdAndDelete(projectId, (err, projectRemoved) => {
       if (err)
@@ -108,9 +109,9 @@ const path = require('path');
   },
 
   // Subir imagenes al documento
-  const uploadImage = function (req, res) {
+  uploadImage: function (req, res) {
     var projectId = req.params.id;
-
+console.log(req.files.image.path);
     if (req.files) {
       var filePath = req.files.image.path;
       var fileSplit = filePath.split("\\");
@@ -153,7 +154,7 @@ const path = require('path');
     }
   },
 
-  const getImageFile = function (req, res) {
+  getImageFile: function (req, res) {
     var file = req.params.image;
     var path_file = './upload/' + file;
     fs.exists(path_file, (exists) => {
@@ -167,5 +168,6 @@ const path = require('path');
       }
     });
   }
+};
 
-module.exports = {home, test, saveProject, getProject, getProjects, updateProject, deleteProject, uploadImage, getImageFile};
+module.exports = controller;
