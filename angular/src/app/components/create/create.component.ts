@@ -22,7 +22,7 @@ export class CreateComponent implements OnInit {
     private _uploadService: UploadService
   ) {
     this.title = 'Crear proyecto';
-    this.project = new Project('', '', '', '' ,'', 2021, '','');
+    this.project = new Project('', '', '', '' ,'' , 2021, '', '');
   }
 
   ngOnInit(): void {}

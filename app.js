@@ -31,7 +31,6 @@ app.use((req, res, next) => {
 });
 
 initialSetup.createRoles();
-initialSetup.createAdmin();
 
 //Carpeta estatica
 app.use(express.static(path.join(__dirname, "public")));

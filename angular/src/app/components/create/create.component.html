@@ -39,15 +39,28 @@
       </span>
     </div>
     <div>
-      <label for="LinkGit">Enlace repositorio</label>
+      <label for="linkGit">Enlace repositorio</label>
       <input
         type="text"
-        name="category"
-        #category="ngModel"
+        name="linkGit"
+        #linkGit="ngModel"
         [(ngModel)]="project.linkGit"
         required
       />
-      <span class="form_error" *ngIf="category.touched && !category.valid">
+      <span class="form_error" *ngIf="linkGit.touched && !linkGit.valid">
+        *
+      </span>
+    </div>
+    <div>
+      <label for="linkdeploy">Enlace Deploy</label>
+      <input
+        type="text"
+        name="linkDeploy"
+        #linkDeploy="ngModel"
+        [(ngModel)]="project.linkDeploy"
+        required
+      />
+      <span class="form_error" *ngIf="linkDeploy.touched && !linkDeploy.valid">
         *
       </span>
     </div>
