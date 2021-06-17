@@ -1,24 +1,23 @@
 "use strict";
-var Project = require("../models/project");
-var fs = require("fs");
-var path = require('path');
+const Project = require("../models/project");
+const fs = require("fs");
+const path = require('path');
 
-var controller = {
-  home: function (req, res) {
+  const home = function (req, res) {
     return res.status(200).send({
     });
-  },
-  test: function (req, res) {
+  }
+ const test = function (req, res) {
     return res.status(200).send({
       message: "Test del controador de projects",
     });
-  },
+  }
 
   // Guarda un proyecto
-  saveProject: function (req, res) {
-    var project = new Project();
+  const saveProject = function (req, res) {
+    let project = new Project();
 
-    var params = req.body;
+    let params = req.body;
     project.name = params.name;
     project.description = params.description;
     project.linkGit = params.linkGit;
@@ -38,10 +37,10 @@ var controller = {
           .send({ message: "No se ah podido guardar el proyecto" });
       return res.status(200).send({ project: projectStored });
     });
-  },
+  }
 
   //Mostrar un documento segun su Id
-  getProject: function (req, res) {
+  const getProject = function (req, res) {
     var projectId = req.params.id;
     if (projectId == null)
       return res.status(404).send({ message: "El proyecto no existe" });
@@ -57,7 +56,7 @@ var controller = {
   },
 
   // Listar los documentos en la base de datos
-  getProjects: function (req, res) {
+  const getProjects = function (req, res) {
     Project.find({}).exec((err, projects) => {
       if (err)
         return res
@@ -72,7 +71,7 @@ var controller = {
   },
 
   // Actulizar un documento en la base de datos
-  updateProject: function (req, res) {
+  const updateProject = function (req, res) {
     var projectId = req.params.id;
     var update = req.body;
 
@@ -91,7 +90,7 @@ var controller = {
     );
   },
 
-  deleteProject: function (req, res) {
+  const deleteProject = function (req, res) {
     var projectId = req.params.id;
     Project.findByIdAndDelete(projectId, (err, projectRemoved) => {
       if (err)
@@ -109,7 +108,7 @@ var controller = {
   },
 
   // Subir imagenes al documento
-  uploadImage: function (req, res) {
+  const uploadImage = function (req, res) {
     var projectId = req.params.id;
 
     if (req.files) {
@@ -154,7 +153,7 @@ var controller = {
     }
   },
 
-  getImageFile: function (req, res) {
+  const getImageFile = function (req, res) {
     var file = req.params.image;
     var path_file = './upload/' + file;
     fs.exists(path_file, (exists) => {
@@ -168,6 +167,5 @@ var controller = {
       }
     });
   }
-};
 
-module.exports = controller;
+module.exports = {home, test, saveProject, getProject, getProjects, updateProject, deleteProject, uploadImage, getImageFile};
